@@ -1,0 +1,18 @@
+# Java
+target
+.class
+
+# IntelliJ
+.idea
+.iml
+
+# Eclipse
+.project
+.classpath
+.settings
+
+# Logs
+.log
+
+# OS
+.DS_Store
