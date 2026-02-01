@@ -1,18 +1,24 @@
-# Java
-target
-.class
+# Maven
+/target
+pom.xml.tag
+pom.xml.releaseBackup
 
-# IntelliJ
-.idea
-.iml
-
-# Eclipse
-.project
+# IDEs
+/.idea
+*.iml
+.vscode/
 .classpath
-.settings
+.project
+.settings/
 
 # Logs
-.log
+*.log
 
 # OS
 .DS_Store
+Thumbs.db
+
+# Test reports
+/test-output/
+/allure-results/
+/allure-report/

@@ -8,6 +8,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class GooglePage extends BasePage{
 	WebDriver driver=new ChromeDriver();
 	private By checkboxes = By.xpath("//a[@href='/checkboxes']");
+	private By checkbox1 = By.xpath("(//input[@type='checkbox'])[1]");
+	private By dropdown = By.xpath("//a[@href='/dropdown']");
+	private By openDropdown = By.xpath("//select[@id='dropdown']");
+	private By option = By.xpath("//option[contains(text(), 'Option 2')]");
 
 	
 	public GooglePage(WebDriver driver) {
@@ -21,6 +25,11 @@ public class GooglePage extends BasePage{
     public void search() {
         //wait.until(ExpectedConditions.visibilityOfElementLocated(searchBox));
         driver.findElement(checkboxes).click();
+        driver.findElement(checkbox1).click();
+        driver.navigate().back();
+        driver.findElement(dropdown).click();
+        driver.findElement(openDropdown).click();
+        driver.findElement(option).click();
     }
 
     public String getTitle() {
