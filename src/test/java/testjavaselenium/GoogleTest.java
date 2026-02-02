@@ -28,6 +28,7 @@ public class GoogleTest {
     void buscarEnGoogle() {
         googlePage.open();
         googlePage.search();
+        System.out.print("X");
         //assertTrue(googlePage.getTitle().contains("Checkboxes"));
     }
 
