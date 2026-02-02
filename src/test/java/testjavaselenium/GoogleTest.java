@@ -7,16 +7,23 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class GoogleTest {
-	WebDriver driver = new ChromeDriver();
-    GooglePage googlePage = new GooglePage(driver);;
+	WebDriver driver;
+    GooglePage googlePage;
 
-    /*@BeforeEach
+    @BeforeEach
     void setUp() {
+    	ChromeOptions options = new ChromeOptions();
+    	options.addArguments("--headless");
+    	options.addArguments("--disable-gpu");
+    	options.addArguments("--window-size=1920,1080");
+
+    	WebDriver driver = new ChromeDriver(options);
         driver = new ChromeDriver();
         googlePage = new GooglePage(driver);
-    }*/
+    }
 
     @Test
     void buscarEnGoogle() {
