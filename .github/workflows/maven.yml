@@ -1,24 +1,19 @@
-name: Selenium CI Pipeline
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+name: Selenium Java CI
+on: [push, pull_request]
 
 jobs:
-  selenium-tests:
-    runs-on: ubuntu-latest
-
+  test:
+    runs-on: ubuntu-latest # Linux es el entorno estándar
     steps:
-      - name: Checkout code
+      - name: Checkout del código
         uses: actions/checkout@v4
 
-      - name: Setup Java
+      - name: Configurar JDK
         uses: actions/setup-java@v4
         with:
+          java-version: '17' # Cambia según tu proyecto
           distribution: 'temurin'
-          java-version: '17'
+          cache: maven
 
-      - name: Run Selenium tests
-        run: mvn clean test
+      - name: Ejecutar pruebas con Maven
+        run: mvn clean test # Ejecuta el comando estándar de Maven
