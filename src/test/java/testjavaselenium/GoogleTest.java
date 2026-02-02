@@ -1,6 +1,5 @@
 package testjavaselenium;
 
-import static org.testng.Assert.assertTrue;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -34,6 +33,6 @@ public class GoogleTest {
 
     @AfterEach
     void tearDown() {
-        driver.quit();
+       //driver.close();
     }
 }

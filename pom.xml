@@ -52,11 +52,14 @@
       <artifactId>junit-jupiter-params</artifactId>
       <scope>test</scope>
     </dependency>
-    <dependency>
-    	<groupId>cucumberProject</groupId>
-    	<artifactId>MavenSelenium</artifactId>
-    	<version>0.0.1-SNAPSHOT</version>
-    </dependency>
+  
+    <!-- Source: https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
+<dependency>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-jar-plugin</artifactId>
+    <version>4.0.0-beta-1</version>
+    <scope>compile</scope>
+</dependency>
   </dependencies>
 
   <build>
