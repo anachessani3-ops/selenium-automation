@@ -17,3 +17,12 @@ jobs:
 
       - name: Ejecutar pruebas con Maven
         run: mvn clean test # Ejecuta el comando estándar de Maven
+
+      - name: Upload ChromeDriver log
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: chromedriver-log
+          path: chromedriver.log
+
+ 
