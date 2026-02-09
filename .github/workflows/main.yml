@@ -27,6 +27,13 @@ jobs:
         key: maven-${{ runner.os }}-${{ hashFiles('**/pom.xml') }}
         restore-keys: |
           maven-${{ runner.os }}
+          
+    - name: Upload TestNG Report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+            name: testng-report
+            path: target/surefire-reports
 
     - name: Run Selenium Tests
       run: mvn clean test
