@@ -1,12 +1,16 @@
 package testjavaselenium;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class GooglePage extends BasePage{
-	WebDriver driver=new ChromeDriver();
+	//WebDriver driver=new ChromeDriver();
+	ChromeOptions options = new ChromeOptions();
+
+	WebDriver driver = new ChromeDriver(options);
+
 	private By checkboxes = By.xpath("//a[@href='/checkboxes']");
 	private By checkbox1 = By.xpath("(//input[@type='checkbox'])[1]");
 	private By dropdown = By.xpath("//a[@href='/dropdown']");
