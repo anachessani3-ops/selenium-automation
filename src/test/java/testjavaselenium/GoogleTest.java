@@ -27,6 +27,9 @@ public class GoogleTest {
 
         driver = new ChromeDriver();
         googlePage = new GooglePage(driver);
+        
+        System.setProperty("webdriver.chrome.verboseLogging", "true");
+        System.setProperty("webdriver.chrome.logfile", "chromedriver.log");
     }
 
     @Test
