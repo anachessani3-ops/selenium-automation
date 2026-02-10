@@ -15,21 +15,19 @@ public class GoogleTest {
 
     @BeforeEach
     void setUp() {
-    	ChromeOptions options = new ChromeOptions();
-    	options.addArguments("--headless");
-    	options.addArguments("--disable-gpu");
-    	options.addArguments("--window-size=1920,1080");
-
-    	options.addArguments("--headless=new");
-    	options.addArguments("--no-sandbox");
-    	options.addArguments("--disable-dev-shm-usage");
-    	WebDriver driver = new ChromeDriver(options);
-
-        driver = new ChromeDriver();
-        googlePage = new GooglePage(driver);
-        
+    	  // Logs de ChromeDriver (ANTES de crear el driver)
         System.setProperty("webdriver.chrome.verboseLogging", "true");
         System.setProperty("webdriver.chrome.logfile", "chromedriver.log");
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless=new");
+        options.addArguments("--window-size=1920,1080");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+
+        driver = new ChromeDriver(options); // ✅ SOLO UNA VEZ
+        googlePage = new GooglePage(driver);
+        
     }
 
     @Test
@@ -42,6 +40,8 @@ public class GoogleTest {
 
     @AfterEach
     void tearDown() {
-       //driver.close();
+    	if (driver != null) {
+            driver.quit(); // 🔥 obligatorio en CI
+        }
     }
 }
